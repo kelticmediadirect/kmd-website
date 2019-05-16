@@ -6,7 +6,7 @@ import Layout from '../components/Layout';
 import Main from '../components/home/Main';
 
 const Index = ({ data }) => {
-  const { serviceCD, serviceRadio, servicePublish, productLists } = data;
+  const { serviceCD, serviceRadio, servicePublish, productLists, headerItems } = data;
 
   return (
     <Layout>
@@ -19,6 +19,7 @@ const Index = ({ data }) => {
         servicePublish={servicePublish}
         serviceRadio={serviceRadio}
         productLists={productLists}
+        headerItems={headerItems}
       />
     </Layout>
   )
@@ -26,6 +27,19 @@ const Index = ({ data }) => {
 
 export const query = graphql`
   query IndexQuery {
+    headerItems: allContentfulHeaderSliderItem {
+      edges {
+        node {
+          name
+          image {
+            resize(width: 1920) {
+              src
+            }
+          }
+        }
+      }
+    }
+
     serviceCD: file(relativePath: { eq: "images/cd.jpg" }) {
       childImageSharp {
         sizes(maxWidth: 1920) {

@@ -8,14 +8,16 @@ import {
 
 import ServiceLink from './ServiceLink';
 import ProductCard from '../ProductCard';
+import MainCarousel from './MainCarousel';
 
 import styles from './Main.module.css';
 
 const Main = (props) => {
-  const { servicePublish, serviceCD, serviceRadio, productLists } = props;
-
+  const { servicePublish, serviceCD, serviceRadio, productLists, headerItems } = props;
+  
   return (
     <Container fluid>
+      <MainCarousel headerItems={headerItems} />
       <Row>
         <Col md={7} lg={8} xl={9}>
           <h1 className={`${styles.title} mt-5`}>Featured Products</h1>
