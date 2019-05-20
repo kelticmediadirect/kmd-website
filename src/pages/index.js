@@ -7,7 +7,7 @@ import Main from '../components/home/Main';
 
 const Index = ({ data }) => {
   const { serviceCD, serviceRadio, servicePublish, productLists, headerItems } = data;
-
+  
   return (
     <Layout>
       <Helmet>
@@ -35,6 +35,9 @@ export const query = graphql`
             resize(width: 1920) {
               src
             }
+          }
+          shopReference {
+            slug
           }
         }
       }

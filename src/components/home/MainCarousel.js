@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import {
   Carousel,
   CarouselItem,
@@ -57,15 +58,36 @@ class MainCarousel extends React.Component {
     const { activeIndex } = this.state;
     const { headerItems } = this.props;
 
-    const items = headerItems.edges.map(({ node }) => (
-      <CarouselItem
-        onExiting={this.onExiting}
-        onExited={this.onExited}
-        key={node.name}
-      >
-        <img src={node.image.resize.src} className={styles.image} alt={node.name} />
-      </CarouselItem>
-    ));    
+    // Return a different link depending on what reference the node has
+    // TODO Tidy up empty Link component
+    const items = headerItems.edges.map(({ node }) => {
+      if (node.shopReference) {
+        return (
+          <CarouselItem
+            onExiting={this.onExiting}
+            onExited={this.onExited}
+            key={node.name}
+          >
+            <Link to={`/products/${node.shopReference.slug}`}>
+              <img src={node.image.resize.src} className={styles.image} alt={node.name} />
+            </Link>
+          </CarouselItem>
+        )
+      } else {
+        console.log("Node has no ref!");
+        return (
+          <CarouselItem
+            onExiting={this.onExiting}
+            onExited={this.onExited}
+            key={node.name}
+          >
+            <Link to="">
+              <img src={node.image.resize.src} className={styles.image} alt={node.name} />
+            </Link>
+          </CarouselItem>
+        )
+      }
+    });    
 
     return (
       <Carousel
@@ -81,7 +103,6 @@ class MainCarousel extends React.Component {
       </Carousel>
     )
   }
-
 }
 
 export default MainCarousel;
