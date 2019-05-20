@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import {
   Button,
   Container,
@@ -16,8 +16,11 @@ const Main = (props) => {
   const { servicePublish, serviceCD, serviceRadio, productLists, headerItems } = props;
   
   return (
-    <Container fluid>
+    <Fragment>
+    <Container className="p-0" fluid>
       <MainCarousel headerItems={headerItems} />
+    </Container>
+    <Container fluid>
       <Row>
         <Col md={7} lg={8} xl={9}>
           <h1 className={`${styles.title} mt-5`}>Featured Products</h1>
@@ -43,6 +46,7 @@ const Main = (props) => {
         </Col>
       </Row>
     </Container>
+    </Fragment>
   );
 };
 
