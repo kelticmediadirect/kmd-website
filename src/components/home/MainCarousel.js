@@ -73,8 +73,20 @@ class MainCarousel extends React.Component {
             </Link>
           </CarouselItem>
         )
+      } else if (node.blogReference) {
+        return (
+          <CarouselItem
+            onExiting={this.onExiting}
+            onExited={this.onExited}
+            key={node.name}
+          >
+            <Link to={`/blog/${node.blogReference.slug}`}>
+              <img src={node.image.resize.src} className={styles.image} alt={node.name} />
+            </Link>
+          </CarouselItem>
+        )
       } else {
-        console.log("Node has no ref!");
+        // console.log("Node has no ref!");
         return (
           <CarouselItem
             onExiting={this.onExiting}

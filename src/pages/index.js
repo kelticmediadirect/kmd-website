@@ -39,6 +39,9 @@ export const query = graphql`
           shopReference {
             slug
           }
+          blogReference {
+            slug
+          }
         }
       }
     }

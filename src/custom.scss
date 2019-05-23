@@ -29,4 +29,8 @@ $theme-colors: (
   background: #00000098;
 }
 
+.blogPostMd img {
+  max-width: 100%;
+}
+
 @import "node_modules/bootstrap/scss/bootstrap";
