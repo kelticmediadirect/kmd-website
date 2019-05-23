@@ -41,6 +41,9 @@ class NavBar extends React.Component {
               <NavLink href="/contact">Contact</NavLink>
             </NavItem>
             <NavItem>
+              <NavLink href="/blog">Blog</NavLink>
+            </NavItem>
+            <NavItem>
               <NavLink href="#" className="snipcart-checkout">Cart</NavLink>
             </NavItem>
           </Nav>
