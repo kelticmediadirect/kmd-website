@@ -30,7 +30,13 @@ $theme-colors: (
 }
 
 .blogPostMd img {
-  max-width: 100%;
+  max-width: 80%;
+}
+
+@media (max-width: 800px) {
+  .blogPostMd img {
+    max-width: 100%;
+  }
 }
 
 @import "node_modules/bootstrap/scss/bootstrap";
