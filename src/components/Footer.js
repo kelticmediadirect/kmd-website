@@ -22,7 +22,7 @@ const Footer = () => {
         <Col md={4}>
           <p className="mb-2 font-weight-bold">Contact</p>
           <hr className="bg-primary w-25 my-2 d-none d-md-block"/>
-          <p className="m-0">kelticmediadirect@gmail.com</p>
+          <p className="m-0">emeraldislepromo@gmail.com</p>
           <p className="m-0">075 51080011</p>
           <hr className="bg-primary d-md-none w-50"/>
         </Col>
